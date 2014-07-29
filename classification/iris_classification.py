@@ -26,13 +26,36 @@ for variety in iris_type:
     if variety == "Iris-setosa":
         marker_color.append('b')
 
-plt.scatter(sepal_width, sepal_length, color=marker_color)
+plt.subplot(231)
+plt.scatter(sepal_length, petal_length, color=marker_color)
+plt.xlabel("Sepal length")
+plt.ylabel("Petal length")
 
-plt.title("Iris classification")
-plt.xlabel("Sepal Width")
-plt.ylabel("Sepal Length")
+plt.subplot(232)
+plt.scatter(sepal_length, petal_width, color=marker_color)
+plt.xlabel("Sepal length")
+plt.ylabel("Petal width")
+
+plt.subplot(233)
+plt.scatter(sepal_width, petal_length, color=marker_color)
+plt.xlabel("Sepal width")
+plt.ylabel("Petal length")
+
+plt.subplot(234)
+plt.scatter(sepal_width, petal_width, color=marker_color)
+plt.xlabel("Sepal width")
+plt.ylabel("Petal width")
+
+plt.subplot(235)
+plt.scatter(petal_length, petal_width, color=marker_color)
+plt.xlabel("Petal length")
+plt.ylabel("Petal width")
+
+plt.subplot(236)
+plt.scatter(sepal_length, sepal_width, color=marker_color)
+plt.xlabel("Sepal length")
+plt.ylabel("Sepal width")
 
 # print to screen
 plt.autoscale(tight=True)
-plt.grid()
 plt.show()
