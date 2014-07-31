@@ -26,6 +26,7 @@ for variety in iris_type:
     if variety == "Iris-setosa":
         marker_color.append('b')
 
+# plot charts
 plt.subplot(231)
 plt.scatter(sepal_length, petal_length, color=marker_color)
 plt.xlabel("Sepal length")
@@ -59,3 +60,20 @@ plt.ylabel("Sepal width")
 # print to screen
 plt.autoscale(tight=True)
 plt.show()
+
+# We can separate Setosa based on petal length. 
+# So get the petal length range for Setosa
+max_setosa = max([iris[0] for iris in zip(petal_length, iris_type) if iris[1] == "Iris-setosa"])
+min_non_setosa = min([iris[0] for iris in zip(petal_length, iris_type) if iris[1] != "Iris-setosa"])
+print(max_setosa)
+print(min_non_setosa)
+
+# First classification model
+# min_non_setosa (3.0) is greater than max_setosa (1.9), so if petal length
+# is less than 2 it is from Setosa
+for record in petal_length:
+    if record < 2:
+        print("Iris Setosa")
+    else:
+        print("Iris Virginica or Iris Versicolour")
+
