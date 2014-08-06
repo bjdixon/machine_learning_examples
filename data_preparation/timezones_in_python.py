@@ -16,6 +16,8 @@ records = [json.loads(line) for line in open(path)]
 time_zones = [rec['tz'] for rec in records if 'tz' in rec]
 tz_set = set(time_zones)
 counts = count_occurrences(time_zones)
+
+# print each timezone followed by the number of occurrences in the data
 for tz in tz_set:
     print(':'.join([tz, str(counts[tz])]))
 
