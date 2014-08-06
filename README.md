@@ -1,3 +1,8 @@
 machine_learning_examples
 =========================
-Examples of machine learning using Python, Scipy, Numpy and Matplotlib
+Examples of data analysis and machine learning using:
+- Python
+- Scipy
+- Numpy
+- Pandas
+- Matplotlib
